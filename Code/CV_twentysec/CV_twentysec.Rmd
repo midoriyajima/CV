@@ -4,12 +4,13 @@ surname: Yajima
 position: "Visiting Researcher"
 address: "Trinity College Dublin"
 phone: +39 338 122 3976
+profilepic: qr-code-1
 email: "yajimamidorimichela@gmail.com"
 twitter: yajimamidori
 github: midoriyajima
 linkedin: midori-yajima
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "I am an MSc graduate in ecology - ecosystem and conservation biology with a BSc in biological sciences and a keen interest in exploring how human and environmental systems intersect"
+aboutme: "I am an MSc graduate in ecology - ecosystem and conservation biology with a BSc in biological sciences and a keen interest in exploring how human and environmental systems intersect. For more detailed information, please find my full CV by scanning the QR code."
 output: vitae::twentyseconds
 ---
 
@@ -23,7 +24,7 @@ library(vitae)
 
 
 ```{r}
-edu <- read.csv("~/CV/CV/Data/Education.csv")
+edu <- read.csv("~/CV/CV/CV/Data/Education.csv")
 
 edu %>% 
   detailed_entries(
@@ -36,7 +37,7 @@ edu %>%
 # Research experience
 
 ```{r}
-exp <- read.csv("~/CV/CV/Data/Research-experience.csv")
+exp <- read.csv("~/CV/CV/CV/Data/Research-experience.csv")
 
 exp %>% 
   detailed_entries(
@@ -48,7 +49,7 @@ exp %>%
 # Courses and workshops
 
 ```{r}
-courses <- read.csv("~/CV/CV/Data/Courses and workshops.csv")
+courses <- read.csv("~/CV/CV/CV/Data/Courses and workshops.csv")
 
 courses %>% 
   detailed_entries(
@@ -61,7 +62,7 @@ courses %>%
 
 # Other experiences
 ```{r}
-other <- read.csv("~/CV/CV/Data/Other experience.csv")
+other <- read.csv("~/CV/CV/CV/Data/Other experience.csv")
 
 other %>% 
   detailed_entries(
