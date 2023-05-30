@@ -1,0 +1,74 @@
+---
+name: Midori
+surname: Yajima
+position: "Visiting Researcher"
+address: "Trinity College Dublin"
+phone: +39 338 122 3976
+email: "yajimamidorimichela@gmail.com"
+twitter: yajimamidori
+github: midoriyajima
+linkedin: midori-yajima
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "I am an MSc graduate in ecology - ecosystem and conservation biology with a BSc in biological sciences and a keen interest in exploring how human and environmental systems intersect"
+output: vitae::twentyseconds
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+
+# Education
+
+
+```{r}
+edu <- read.csv("~/CV/CV/Data/Education.csv")
+
+edu %>% 
+  detailed_entries(
+    what = degree,
+    when = end_date 
+  )
+                 
+```
+
+# Research experience
+
+```{r}
+exp <- read.csv("~/CV/CV/Data/Research-experience.csv")
+
+exp %>% 
+  detailed_entries(
+    what = role,
+    when = end_date
+  )
+
+```
+# Courses and workshops
+
+```{r}
+courses <- read.csv("~/CV/CV/Data/Courses and workshops.csv")
+
+courses %>% 
+  detailed_entries(
+    what = name,
+    when = date,
+    with = who
+    )
+
+```
+
+# Other experiences
+```{r}
+other <- read.csv("~/CV/CV/Data/Other experience.csv")
+
+other %>% 
+  detailed_entries(
+    what = role, 
+    when = end_date,
+    with = where,
+    why = details
+  )
+
+```

@@ -1,0 +1,218 @@
+---
+name: Midori
+surname: Yajima
+position: "Visiting Researcher"
+address: "Trinity College Dublin"
+phone: +39 338 122 3976
+email: "yajimamidorimichela@gmail.com"
+twitter: yajimamidori
+github: midoriyajima
+linkedin: midori-yajima
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::moderncv:
+    theme: classic
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tidyverse)
+library(glue)
+library(kableExtra)
+library(tibble)
+library(knitr)
+```
+
+I am an MSc graduate in ecology - ecosystem and conservation biology with a BSc in biological sciences and a keen interest in exploring how human and environmental systems intersect
+
+# Education
+
+```{r}
+edu <- read.csv("~/CV/CV/Data/Education.csv")
+
+edu %>% 
+  detailed_entries(
+    what = degree,
+    when = glue("{start_date} - {end_date}"),
+    with = glue("{university}, {location}"),
+    why = glue("Dissertation: {dissertation},
+               Grade: {grade}")
+  )
+                 
+```
+# Research experience
+
+```{r}
+exp <- read.csv("~/CV/CV/Data/Research-experience.csv")
+
+exp %>% 
+  detailed_entries(
+    what = role,
+    when = glue("{start_date} - {end_date}"),
+    with = glue("{institution}, {location}"),
+    why = description
+  )
+
+```
+
+# Courses and workshops
+
+```{r}
+courses <- read.csv("~/CV/CV/Data/Courses and workshops.csv")
+
+courses %>% 
+  detailed_entries(
+    what = name,
+    when = date,
+    with = who
+    )
+
+```
+
+# Awards and scholarships
+
+```{r}
+aws <- read.csv("~/CV/CV/Data/Awards and Scholarships.csv")
+
+aws %>% 
+  detailed_entries(
+    what = name,
+    when = when,
+    why = description,
+    with = who,
+  )
+
+```
+
+# Talks and presentations
+## Academic
+
+```{r}
+talks <- read.csv("~/CV/CV/Data/Talks and Presentations.csv")
+
+talks %>% 
+  filter(what == "Academic Presentation") %>% 
+  brief_entries(name, date)
+
+```
+## Non academic
+
+```{r}
+talks <- read.csv("~/CV/CV/Data/Talks and Presentations.csv")
+
+talks %>% 
+  filter(what == "Non academic") %>% 
+  brief_entries(name, date)
+
+```
+
+# Outreach
+## Written contents
+
+```{r}
+out <- read.csv("~/CV/CV/Data/Outreach.csv")
+
+out %>% 
+  filter(what == "Written contents") %>% 
+  brief_entries(name)
+
+```
+
+## Visual contents
+
+```{r}
+out <- read.csv("~/CV/CV/Data/Outreach.csv")
+
+out %>% 
+  filter(what == "Visual contents") %>% 
+  brief_entries(name)
+
+```
+
+## Activities and events
+
+```{r}
+out <- read.csv("~/CV/CV/Data/Outreach.csv")
+
+out %>% 
+  filter(what == "Events") %>% 
+   brief_entries(glue("{description} - {name}")
+   )
+
+```
+
+# Mentoring
+
+```{r}
+ment <- read.csv("~/CV/CV/Data/Mentoring.csv")
+
+ment %>% 
+   brief_entries(description, ifelse(end_date == "",
+                  start_date,
+                  glue("{start_date} - {end_date}")
+    )
+  )
+
+```
+# Other experiences
+```{r}
+other <- read.csv("~/CV/CV/Data/Other experience.csv")
+
+other %>% 
+  detailed_entries(
+    what = role, 
+    when = glue("{start_date} - {end_date}"),
+    with = where,
+    why = details
+  )
+
+```
+# Media coverage
+```{r}
+media <- read.csv("~/CV/CV/Data/Media coverage.csv")
+
+media %>% 
+ brief_entries(name)
+
+```
+
+\newpage
+
+# Skills
+## Technical
+|                     **Programming** (R, RStudio, Rmarkdown, Shiny apps) 
+|                     **Geographic Information Systems** (QGIS)
+|                     **Graphic design** (Adobe Photoshop, Adobe Illustrator)
+|                     **Reference management** (Mendeley, Colandr)
+|                     **Collaboration skills** (Miro, GitHub)
+
+## Professional
+|                     Energy Dispersive and Backscattered **Electron Scanning Microscopy**  
+|                     Production of **archival quality plant specimens**
+|                     Use of **field equipment** (thermohygrometer, porometer, fluorometer,
+|                     ceptometer)
+|                     Exploratory **data analysis**, data **visualisation**, data
+|                     **management**
+
+## Language
+|                     Italian (Mother tongue), English (Advanced), Portuguese (Intermediate), 
+|                     Spanish (Base), French (Base)
+
+# References
+|                    Professor **Jennifer McElwain**, Chair of Botany
+|                      at Trinity College Dublin's School of Natural
+|                      Sciences and director of Trinity College Botanic
+|                      Garden 
+|                      jmcelwai@tcd.ie
+|                      https://www.tcd.ie/Botany/people/JMCELWAI/
+|                      https://plantclimatelab.ie/
+
+&nbsp;
+
+|                    Doctor **Suzette Flantua** research fellow at
+|                      University of Bergen and Project leader of
+|                      PPF-Alpine 
+|                      suzette.flantua@uib.no
+|                      https://www.uib.no/en/persons/Suzette.Geertruida.Anna.Flantua  
+|                      https://mountainsinmotion.w.uib.no/  
