@@ -24,12 +24,12 @@ library(tibble)
 library(knitr)
 ```
 
-I am an MSc graduate in ecology - ecosystem and conservation biology with a BSc in biological sciences and a keen interest in exploring how human and environmental systems intersect
+I am an MSc graduate in ecology - ecosystem and conservation biology with a BSc in biological sciences and a keen interest in social ecological systems dynamics
 
 # Education
 
 ```{r}
-edu <- read.csv("~/CV/CV/Data/Education.csv")
+edu <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Education.csv")
 
 edu %>% 
   detailed_entries(
@@ -44,7 +44,7 @@ edu %>%
 # Research experience
 
 ```{r}
-exp <- read.csv("~/CV/CV/Data/Research-experience.csv")
+exp <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Research-experience.csv")
 
 exp %>% 
   detailed_entries(
@@ -59,7 +59,7 @@ exp %>%
 # Courses and workshops
 
 ```{r}
-courses <- read.csv("~/CV/CV/Data/Courses and workshops.csv")
+courses <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Courses and workshops.csv")
 
 courses %>% 
   detailed_entries(
@@ -73,7 +73,7 @@ courses %>%
 # Awards and scholarships
 
 ```{r}
-aws <- read.csv("~/CV/CV/Data/Awards and Scholarships.csv")
+aws <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Awards and Scholarships.csv")
 
 aws %>% 
   detailed_entries(
@@ -89,7 +89,7 @@ aws %>%
 ## Academic
 
 ```{r}
-talks <- read.csv("~/CV/CV/Data/Talks and Presentations.csv")
+talks <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Talks-and-Presentations.csv")
 
 talks %>% 
   filter(what == "Academic Presentation") %>% 
@@ -99,7 +99,7 @@ talks %>%
 ## Non academic
 
 ```{r}
-talks <- read.csv("~/CV/CV/Data/Talks and Presentations.csv")
+talks <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Talks-and-Presentations.csv")
 
 talks %>% 
   filter(what == "Non academic") %>% 
@@ -111,7 +111,7 @@ talks %>%
 ## Written contents
 
 ```{r}
-out <- read.csv("~/CV/CV/Data/Outreach.csv")
+out <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Outreach.csv")
 
 out %>% 
   filter(what == "Written contents") %>% 
@@ -122,7 +122,7 @@ out %>%
 ## Visual contents
 
 ```{r}
-out <- read.csv("~/CV/CV/Data/Outreach.csv")
+out <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Outreach.csv")
 
 out %>% 
   filter(what == "Visual contents") %>% 
@@ -133,7 +133,7 @@ out %>%
 ## Activities and events
 
 ```{r}
-out <- read.csv("~/CV/CV/Data/Outreach.csv")
+out <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Outreach.csv")
 
 out %>% 
   filter(what == "Events") %>% 
@@ -145,7 +145,7 @@ out %>%
 # Mentoring
 
 ```{r}
-ment <- read.csv("~/CV/CV/Data/Mentoring.csv")
+ment <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Mentoring.csv")
 
 ment %>% 
    brief_entries(description, ifelse(end_date == "",
@@ -157,7 +157,7 @@ ment %>%
 ```
 # Other experiences
 ```{r}
-other <- read.csv("~/CV/CV/Data/Other experience.csv")
+other <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Other experience.csv")
 
 other %>% 
   detailed_entries(
@@ -170,14 +170,13 @@ other %>%
 ```
 # Media coverage
 ```{r}
-media <- read.csv("~/CV/CV/Data/Media coverage.csv")
+media <- read.csv("C:/Users/myama/Documents/CV/CV/CV/Data/Media coverage.csv")
 
 media %>% 
  brief_entries(name)
 
 ```
 
-\newpage
 
 # Skills
 ## Technical
@@ -196,8 +195,7 @@ media %>%
 |                     **management**
 
 ## Language
-|                     Italian (Mother tongue), English (Advanced), Portuguese (Intermediate), 
-|                     Spanish (Base), French (Base)
+|                     Italian (Mother tongue), English (Advanced), Portuguese (Intermediate)
 
 # References
 |                    Professor **Jennifer McElwain**, Chair of Botany
